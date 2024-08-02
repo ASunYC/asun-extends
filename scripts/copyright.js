@@ -4,7 +4,7 @@ module.exports = `/*!
  * ------------------------------------------------------------------------------------
  * Copyright (c) ${_package.author}.
  * ${_package.license} License
- * https://github.com/ASunYC/db-async
+ * https://github.com/ASunYC/asun-extends
  * ${_package.description}
  * ------------------------------------------------------------------------------------
  */`
