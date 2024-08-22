@@ -13,15 +13,11 @@
     "watch": "jest --watchAll",
     "coverage": "jest --coverage",
     "dev": "cd example && npm install && npm run dev",
-    "build": "npm run clean && npx rollup -c && npm run build:doc && shx cp package.json LICENSE README.md dist/",
+    "build": "npm run clean && npx rollup -c && npm run build:doc && shx cp LICENSE README.md dist/ && node ./scripts/publish.js",
     "clean": "shx rm -rf dist && shx rm -rf lib && shx rm -rf docs/api",
     "build:dts": "npx tsc && npx api-extractor run --local --verbose",
     "build:doc": "npx api-documenter markdown --input temp --output docs/api",
     "pub": "cd dist && npm publish"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ASunYC/asun-extends"
   },
   "keywords": [
     "asun01",
@@ -33,9 +29,14 @@
   "author": "asun01",
   "license": "Apache-2.0",
   "typings": "index.d.ts",
+  "homepage": "https://github.com/ASunYC",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ASunYC/asun-extends"
   },
   "dependencies": {
     "@asun01/asun-extend": "file:",
