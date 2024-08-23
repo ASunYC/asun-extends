@@ -3,9 +3,11 @@ const fs = require('fs');
 var packageJson = require('../package.json');
 var version = packageJson.version;
 
-let _dependencies = packageJson.dependencies;
+let _dependencies = packageJson.peerDependencies;
 
 delete _dependencies[packageJson.name];
+
+console.log('peerDependencies: ', _dependencies);
 
 const packageJsonStr = `{
     "name": "${packageJson.name}",
@@ -20,7 +22,7 @@ const packageJsonStr = `{
     "author":"${packageJson.author}",
     "license": "${packageJson.license}",
     "publishConfig": ${JSON.stringify(packageJson.publishConfig)},
-    "dependencies": ${JSON.stringify(_dependencies)}
+    "peerDependencies": ${JSON.stringify(_dependencies)}
   }
 `;
 
